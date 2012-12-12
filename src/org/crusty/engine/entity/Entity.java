@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import org.crusty.engine.CrustyEngine;
+import org.crusty.engine.Screen;
 import org.crusty.engine.sprite.Sprite;
 import org.crusty.math.Vec2;
 import org.crusty.math.Vec2int;
@@ -40,9 +41,11 @@ public class Entity extends RootEntity {
 //		currentImage = this.sprites[0].images[0];
 //	}
 	
+//	protected Screen parent;
+	
 	/** Reference */
-	public Entity(Sprite[] sprites, int xoffset, int yoffset) {
-		super();
+	public Entity(Screen parent, Sprite[] sprites, int xoffset, int yoffset) {
+		super(parent);
 		this.sprites = sprites;
 		currentSprite = this.sprites[0];
 		rotatePoint = new Vec2(sprites[0].getWidth()/2, sprites[0].getHeight()/2);
@@ -138,6 +141,18 @@ public class Entity extends RootEntity {
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
+		
+	}
+
+	@Override
+	public void collided(RootEntity e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void message(String s, RootEntity entity) {
+		// TODO Auto-generated method stub
 		
 	}
 

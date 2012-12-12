@@ -14,13 +14,13 @@ public abstract class MessageBox extends GraphicInterfaceObject {
 	
 	String text = "";
 	
-	protected Screen screen;
+//	protected Screen screen;
 	
 	Font font = FontStore.smallFont;
 	
-	public MessageBox(Screen s, int x, int y, int width, int height) {
-		super(x, y, width, height);
-		this.screen = s;
+	public MessageBox(Screen parent, int x, int y, int width, int height) {
+		super(parent, x, y, width, height);
+//		this.screen = s;
 	}
 
 	public abstract void logic(long dt);

@@ -67,7 +67,7 @@ public class ParticleManager {
 		}
 	}
 	
-	public void createBurst(int num, Sprite sprite, Vec2 pos) {
+	public void createBurst(int num, Sprite sprite, Vec2 pos, float scale) {
 		for (int i = 0; i < num; i++) {
 			Vec2 vel = new Vec2(r.nextDouble() - 0.5, r.nextDouble() - 0.5);
 			vel = vel.normalise();
@@ -75,7 +75,7 @@ public class ParticleManager {
 			vel.x *= 0.02;
 			vel.y *= 0.02;
 			Particle p = new Particle(sprite, pos, vel, acc, new Vec2int(sprite.getWidth()/2, sprite.getHeight()/2), 
-					1.5f, (r.nextDouble() - 0.5)/200);
+					scale, (r.nextDouble() - 0.5)/200);
 			particles.add(p);
 //			System.out.println("Pos: " + pos.toString() + " vel: " + vel.toString());
 		}

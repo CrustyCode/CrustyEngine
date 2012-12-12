@@ -1,16 +1,19 @@
 package org.crusty.engine.GUI;
 
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 
+import org.crusty.engine.Screen;
 import org.crusty.engine.entity.RootEntity;
 
 public abstract class GraphicInterfaceObject extends RootEntity {
 	
 	protected boolean mouseOver = false;
 	
-	public GraphicInterfaceObject(int x, int y, int width, int height) {
-		this.setRect(x, y, width, height);
+	public GraphicInterfaceObject(Screen parent, int x, int y, int width, int height) {
+		super(parent);
+		this.setRect(new Rectangle(x, y, width, height));
 	}
 	
 	@Override

@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 
 import org.crusty.engine.CrustyEngine;
 import org.crusty.engine.FontStore;
+import org.crusty.engine.Screen;
 import org.crusty.engine.entity.RootEntity;
 import org.crusty.math.Vec2int;
 
@@ -22,7 +23,8 @@ public abstract class Menu extends RootEntity {
 	private int menuDelay = 150;
 	private Font font;
 	
-	public Menu(Vec2int pos, String[] options) {
+	public Menu(Screen parent, Vec2int pos, String[] options) {
+		super(parent);
 		this.options = options;
 		this.pos = pos;
 		menuPos = 0;

@@ -15,16 +15,16 @@ public abstract class Button extends GraphicInterfaceObject {
 	
 	String text = "";
 	
-	protected Screen screen;
+//	protected Screen screen;
 	
 	Font font = FontStore.smallFont;
 	
 	MouseOverPane mouseOverPane = null;
 	private boolean displayingInfoPane = false;
 	
-	public Button(Screen s, int x, int y, int width, int height, MouseOverPane ip) {
-		super(x, y, width, height);
-		this.screen = s;
+	public Button(Screen parent, int x, int y, int width, int height, MouseOverPane ip) {
+		super(parent, x, y, width, height);
+//		this.screen = s;
 		setInfoPane(ip);
 	}
 
@@ -33,13 +33,13 @@ public abstract class Button extends GraphicInterfaceObject {
 		if (mouseOverPane != null)
 			if (mouseOver) {
 				if (!displayingInfoPane) {
-					screen.addEntity(mouseOverPane);
+					parent.addEntity(mouseOverPane);
 					displayingInfoPane = true;
 				}
 			} else {
 				if (displayingInfoPane) {
 					displayingInfoPane = false;
-					screen.getEntities().remove(mouseOverPane);
+					parent.getEntities().remove(mouseOverPane);
 				}
 			}
 	}

@@ -14,6 +14,7 @@ import java.awt.image.BufferedImage;
 import org.crusty.engine.CrustyEngine;
 import org.crusty.engine.FontStore;
 import org.crusty.engine.Screen;
+import org.crusty.engine.entity.RootEntity;
 
 public class MouseOverPane extends GraphicInterfaceObject {
 
@@ -24,15 +25,15 @@ public class MouseOverPane extends GraphicInterfaceObject {
 	
 	String[] text = null;
 	
-	protected Screen screen;
+//	protected Screen screen;
 	
 	Font font = FontStore.smallFont;
 	
 	int verticalSpacing = 20;
 	
-	public MouseOverPane(Screen s, String[] text) {
-		super(0, 0, 0, 0);
-		this.screen = s;
+	public MouseOverPane(Screen parent, String[] text) {
+		super(parent, 0, 0, 0, 0);
+//		this.screen = s;
 		this.text = text;
 		depth = 999; // Infront
 		
@@ -104,6 +105,18 @@ public class MouseOverPane extends GraphicInterfaceObject {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
+		
+	}
+
+	@Override
+	public void collided(RootEntity e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void message(String s, RootEntity entity) {
+		// TODO Auto-generated method stub
 		
 	}
 
