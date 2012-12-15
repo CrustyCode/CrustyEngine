@@ -16,6 +16,7 @@ import org.crusty.engine.FontStore;
 import org.crusty.engine.Screen;
 import org.crusty.engine.entity.RootEntity;
 
+/** This is a small rectangular window with text, used for mouse-overs on buttons for example */
 public class MouseOverPane extends GraphicInterfaceObject {
 
 	Color normalColor = Color.YELLOW;

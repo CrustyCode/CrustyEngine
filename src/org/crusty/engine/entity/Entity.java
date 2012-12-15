@@ -11,6 +11,7 @@ import org.crusty.engine.sprite.Sprite;
 import org.crusty.math.Vec2;
 import org.crusty.math.Vec2int;
 
+/** Entities have Sprites and all proporties of a RootEntity */
 public class Entity extends RootEntity {
 
 	protected Vec2 rotatePoint;
